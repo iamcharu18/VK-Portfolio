@@ -1,0 +1,83 @@
+<div class="col py-3">
+    <div id="form-container" class="container">
+        <h1>
+            <%= title %> Blog
+        </h1>
+        <form method="post" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        <label for="title">Title</label>
+                        <input class="form-control" name="title" id="title" type="text" value="<%= blog.title %>"
+                            required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="metaTitle">Meta Title</label>
+                        <input class="form-control d-inline" name="metaTitle" id="metaTitle" type="text"
+                            value="<%= blog.metaTitle %>" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="urlSlug">URL Slug</label>
+                        <input class="form-control" name="urlSlug" id="urlSlug" type="text" value="<%= blog.urlSlug %>"
+                            required>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        <label for="banner">Banner Image</label>
+                        <input class="form-control" name="banner" id="banner" type="file" accept="image/*">
+                        <!-- <%= blog.bannerImg !== undefined ? blog.bannerImg : '#' %> -->
+                        <img id="bannerPreImg" height="100" width="100"
+                            src="<%= blog.bannerImg !== undefined ? blog.bannerImg : '#' %>" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        <label for="description">Description</label>
+                        <textarea class="form-control" rows="3" cols="50" name="description" required id="description"
+                            type="text"><%= blog.description %></textarea>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        <label for="metaDescription">Meta Description</label>
+                        <textarea class="form-control" rows="3" cols="50" name="metaDescription" required
+                            id="metaDescription" type="text"><%= blog.metaDescription %></textarea>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group mb-3">
+                        <label for="metaKeywords">Meta Keywords</label>
+                        <input class="form-control" name="metaKeywords" id="metaKeywords" type="text"
+                            value="<%= blog.metaKeywords %>" required>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group mb-3">
+                        <label for="category">Category</label>
+                        <select class="form-select" name="category" id="category" required>
+                            <option value="volvo" <% if (blog.category==='volvo' ) { %> selected <% } %>>Volvo
+                            </option>
+                            <option value="saab" <% if (blog.category==='saab' ) { %> selected <% } %>>Saab
+                            </option>
+                            <option value="mercedes" <% if (blog.category==='mercedes' ) { %> selected <% } %>
+                                    >Mercedes</option>
+                            <option value="audi" <% if (blog.category==='audi' ) { %> selected <% } %>>Audi
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="content">Content</label>
+                    <input name="content" id="content" value="<%= blog.content %>" type="hidden">
+                    <div id="editor-container">
+
+                    </div>
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="verifyCheck">
+                    <label class="form-check-label" for="verifyCheck">Verify</label>
+                </div>

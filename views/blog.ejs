@@ -1,0 +1,102 @@
+<%- include('partials/header'); -%>
+    <!-- Hero -->
+    <section id="slider" class="hero p-0 odd featured">
+        <div class="swiper-container no-slider slider-h-75">
+            <div class="swiper-wrapper">
+
+                <!-- Item 1 -->
+                <div class="swiper-slide slide-center">
+
+                    <img src="assets/images/bg-5.jpg" class="full-image" data-mask="70">
+
+                    <div class="slide-content row text-center">
+                        <div class="col-12 mx-auto inner">
+                            <h1 data-aos="zoom-out-up" data-aos-delay="400" class="title effect-static-text">Blog Posts
+                            </h1>
+                            <nav data-aos="zoom-out-up" data-aos-delay="800" aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Blog Posts</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog -->
+    <section id="blog" class="section-1 showcase blog-grid masonry news">
+        <div data-aos="zoom-in" data-aos-delay="200" data-aos-anchor="body" class="container">
+            <div class="row content blog-grid masonry">
+                <main class="col-12 p-0">
+                    <div id="blog-list" class="bricklayer items columns-3">
+                        <% for (const blog of blogs) { %>
+                            <div class="card p-0 text-center item">
+                                <div class="image-over">
+                                    <img src=<%=blog.bannerImg %> alt="Lorem ipsum">
+                                </div>
+                                <div class="card-caption col-12 p-0">
+                                    <div class="card-body">
+                                        <a href="/blog/<%= blog.urlSlug %>">
+                                            <h4 class="blog-title">
+                                                <%= blog.title %>
+                                            </h4>
+                                        </a>
+                                    </div>
+                                    <div class="card-footer d-lg-flex align-items-center justify-content-center">
+                                        <a class="d-lg-flex align-items-center"><i class="icon-clock"></i>
+                                            <% let date=new Date(blog.datePosted) %>
+                                                <%= date.getDate() %>
+                                                    <%= date.toLocaleString('default', { month: 'short' }) %>, <%=
+                                                            date.getFullYear() %>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <% } %>
+                    </div>
+                </main>
+            </div>
+
+            <!-- Pagination -->
+            <div class="row">
+                <div class="col-12">
+                    <nav>
+                        <ul class="pagination justify-content-center">
+                            <% if (currentPage> 1) { %>
+                                <li class="page-item">
+                                    <a class="page-link" href="/blog?page=<%= currentPage - 1 %>" tabindex="-1">
+                                        <i class="icon-arrow-left"></i>
+                                    </a>
+                                </li>
+                                <% } %>
+                                    <% for (let i=1; i <=totalPages; i++) { %>
+                                        <% if (i===currentPage) { %>
+                                            <li class="page-item active"><a class="page-link"
+                                                    href="/blog?page=<%= i %>">
+                                                    <%= i %>
+                                                </a></li>
+                                            <% } else { %>
+                                                <li class="page-item"><a class="page-link" href="/blog?page=<%= i %>">
+                                                        <%= i %>
+                                                    </a></li>
+                                                <% } %>
+                                                    <% } %>
+                                                        <% if (currentPage < totalPages) { %>
+                                                            <li class="page-item">
+                                                                <a class="page-link"
+                                                                    href="/blog?page=<%= parseInt(currentPage) + 1 %>">
+                                                                    <i class="icon-arrow-right"></i>
+                                                                </a>
+                                                            </li>
+                                                            <% } %>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <%- include('partials/footer'); -%>

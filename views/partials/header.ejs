@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <!-- ==============================================
+        Basic Page Needs
+        =============================================== -->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
+
+    <title>
+        <%= title %>
+    </title>
+    <link rel="canonical" href="https://www.vamshikurapati.com/" />
+    <meta name="description" content="Creative Agency, Portfolio, Corporate, Startup & Technology">
+    <meta name="subject" content="Creative Agency, Portfolio, Corporate, Startup & Technology">
+    <meta name="author" content="Codings">
+
+    <!-- ==============================================
+        Favicons
+        =============================================== -->
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple-touch-icon-114x114.png">
+
+    <!-- ==============================================
+        Vendor Stylesheet
+        =============================================== -->
+    <link rel="stylesheet" href="/assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/vendor/slider.min.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/vendor/icons.min.css">
+    <link rel="stylesheet" href="/assets/css/vendor/animation.min.css">
+    <link rel="stylesheet" href="/assets/css/vendor/gallery.min.css">
+    <link rel="stylesheet" href="/assets/css/vendor/cookie-notice.min.css">
+
+    <!-- ==============================================
+        Custom Stylesheet
+        =============================================== -->
+    <link rel="stylesheet" href="/assets/css/default.css">
+    <link rel="stylesheet" href="/assets/css/theme-orange.css">
+
+    <!-- ==============================================
+        Theme Settings
+        =============================================== -->
+    <style>
+        :root {
+            --header-bg-color: #16161c;
+            --nav-item-color: #f5f5f5;
+            --top-nav-item-color: #f5f5f5;
+            --hero-bg-color: #111117;
+
+            --section-1-bg-color: #111117;
+            --section-2-bg-color: #111117;
+            --section-3-bg-color: #111117;
+            --section-4-bg-color: #111117;
+
+            --footer-bg-color: #16161c;
+        }
+    </style>
+
+
+</head>
+
+<body class="theme-mode-dark">
+
+    <!-- Header -->
+    <header id="header">
+
+        <!-- Navbar -->
+        <nav data-aos="zoom-out" data-aos-delay="800" class="navbar navbar-expand">
+            <div class="container header">
+
+                <!-- Navbar Brand-->
+                <a class="navbar-brand" href="/">
+                    VK
+                    <!-- <i class="version-number">2.1</i> -->
+                    <!-- 
+                            Custom Logo
+                            <img src="/assets/images/logo.svg" alt="Leverage">
+                        -->
+                </a>
+
+                <!-- Nav holder -->
+                <div class="ml-auto"></div>
+
+                <!-- Navbar Items -->
+                <ul class="navbar-nav items">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link" <% if (nav==="index" ) { %>
+                            style="text-decoration: underline;"
+                            <% } %>
+                                >Home
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="/story" class="nav-link" <% if (nav==="story" ) { %>
+                            style="text-decoration: underline;"
+                            <% } %>>My Story
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="/gallery" class="nav-link" <% if (nav==="gallery" ) { %>
+                            style="text-decoration: underline;"
+                            <% } %>>Gallery
+                        </a>
+                    </li>
+                    <!-- <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">Podcasts</a>
+                    </li> -->
+                    <li class="nav-item dropdown">
+                        <a href="/videos" class="nav-link" <% if (nav==="videos" ) { %>
+                            style="text-decoration: underline;"
+                            <% } %>>Videos
+                        </a>
+                    </li>
+
+                    <li class="nav-item social">
+                        <a href="https://www.youtube.com/@VamshiKurapati" target="_blank" class="nav-link"><i
+                                class="icon-social-youtube"></i></a>
+                    </li>
+                    <li class="nav-item social">
+                        <a href="https://www.instagram.com/thevamshikurapati/" target="_blank" class="nav-link"><i
+                                class="icon-social-instagram"></i></a>
+                    </li>
+
+                </ul>
+
+                <ul class="navbar-nav toggle">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-toggle="modal" data-target="#menu">
+                            <i class="icon-menu m-0"></i>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Navbar Action -->
+                <ul class="navbar-nav action">
+                    <li class="nav-item ml-3">
+                        <a href="mentorship" class="btn ml-lg-auto dark-button"><i class="icon-speech"></i>Book</a>
+                        <!-- 
+                                Suggestion: Replace the purchase button above with a contact button.
+                                
+                                <a href="#contact" class="smooth-anchor btn ml-lg-auto dark-button"><i class="icon-rocket"></i>CONTACT US</a>
+                            -->
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
